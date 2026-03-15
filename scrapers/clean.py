@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("data/combined_news.csv")
+df = pd.read_csv("data/combined_newss.csv")
 
 # Removing duplicates 
 df.drop_duplicates(inplace=True)
@@ -12,6 +12,6 @@ df.dropna(inplace=True)
 df = df[df["title"].str.len() > 10]
 
 # Save to clean csv file
-df.to_csv("data/cleaned_news_file.csv", index=False)
+df.to_csv("data/cleaned_news.csv", index=False)
 
 print("Cleand news is Saved")

@@ -37,21 +37,18 @@ for p in posts:
 
 
     if re.search(r"techcrunch.com/\d{4}/\d{2}/\d{2}", url):
-        if "ai" in title.lower() or "artificial" in title.lower():
-
-            # Save file to the list - ai_articles 
             ai_articles.append({'title':title , 'url':url})
             
-            for a in ai_articles:
-             print(a["title"])
-             print(a["url"])
-             print("-"*50)
+    for a in ai_articles:
+        print(a["title"])
+        print(a["url"])
+        print("-"*50)
 
 
 
 # Saving data to CSV
 
 df = pd.DataFrame(ai_articles)
-df.to_csv("data/techcrunch_ai_news.csv" , index=False)
+df.to_csv("data/techcrunch_news.csv" , index=False)
 
 print("Saved to CSV")

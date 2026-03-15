@@ -23,9 +23,7 @@ def fetch_stories(s_id):
 
         if data and data.get("title"):
             title = data.get("title")
-
-            if "ai" in title.lower() or "artificial" in title.lower():
-                return{
+            return{
                     "title" : title ,
                     "url" : data.get("url")
                 }
@@ -37,7 +35,7 @@ with ThreadPoolExecutor(max_workers=10)as executor:
 
 stories = [story for story in results if story]
 
-print(f"Found {len(stories)} AI - related stories:")
+print(f"Found {len(stories)} stories:")
 #for s in stories:
 #    print(s)
 
@@ -51,7 +49,7 @@ for s in stories:
 # converting list of dict to dataframe
 df = pd.DataFrame(stories)
 
-df.to_csv("data/hackernews_ai_stories.csv", index=False, encoding='utf-8')
+df.to_csv("data/hackernews_stories.csv", index=False, encoding='utf-8')
 
 print("Saved to CSV")
 # for s_id in stories_id:

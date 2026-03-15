@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("cleaned_news_file.csv")
+df = pd.read_csv("data/cleaned_news_file.csv")
 
 keywords = ["ai",
             "gpt",
@@ -14,6 +14,6 @@ def is_ai(title):
 
 df = df[df["title"].apply(is_ai)]
 
-df.to_csv("filtered_news.csv" , index=False)
+df.to_csv("data/filtered_news.csv" , index=False)
 
 print("Saved final csv file")

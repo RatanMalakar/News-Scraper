@@ -52,6 +52,6 @@ for p in posts:
 # Saving data to CSV
 
 df = pd.DataFrame(ai_articles)
-df.to_csv("techcrunch_ai_news.csv" , index=False)
+df.to_csv("data/techcrunch_ai_news.csv" , index=False)
 
 print("Saved to CSV")

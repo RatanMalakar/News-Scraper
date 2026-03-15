@@ -51,7 +51,7 @@ for s in stories:
 # converting list of dict to dataframe
 df = pd.DataFrame(stories)
 
-df.to_csv("hackernews_ai_stories.csv", index=False, encoding='utf-8')
+df.to_csv("data/hackernews_ai_stories.csv", index=False, encoding='utf-8')
 
 print("Saved to CSV")
 # for s_id in stories_id:

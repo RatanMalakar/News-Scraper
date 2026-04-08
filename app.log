@@ -1,0 +1,476 @@
+2026-04-04 20:43:03,560 - INFO - Fetching data...
+2026-04-04 20:46:49,525 - INFO - Fetching data...
+2026-04-04 20:47:33,825 - INFO - Fetched 97 stories 
+
+2026-04-04 20:47:34,076 - INFO - 
+ Data inserted to the database successfully
+2026-04-04 20:51:26,617 - INFO - Fetching data...
+2026-04-04 20:52:13,093 - INFO - Fetched 99 stories 
+
+2026-04-04 20:52:13,420 - INFO - 
+ Data inserted to the database successfully
+2026-04-04 21:56:54,267 -INFO -Fetching html
+2026-04-04 21:56:54,269 -INFO -Fetching Webpage
+2026-04-04 21:57:39,907 -INFO -Fetching html
+2026-04-04 21:57:39,908 -INFO -Fetching Webpage
+2026-04-04 21:57:40,904 -INFO -Extracted 0 articles
+2026-04-04 21:57:40,905 -INFO -Fetched 0 articles
+2026-04-04 21:57:41,297 -ERROR -Database error occured
+Traceback (most recent call last):
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 108, in main
+    insert_articles(cursor,articles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 81, in insert_articles
+    cursor.executemant(
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.cursor' object has no attribute 'executemant'. Did you mean: 'executemany'?
+2026-04-04 21:59:47,854 -INFO -Fetching html
+2026-04-04 21:59:47,855 -INFO -Fetching Webpage
+2026-04-04 21:59:48,956 -INFO -Extracted 0 articles
+2026-04-04 21:59:48,956 -INFO -Fetched 0 articles
+2026-04-04 21:59:49,302 -ERROR -Database error occured
+Traceback (most recent call last):
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 108, in main
+    insert_articles(cursor,articles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 81, in insert_articles
+    cursor.executemant(
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.cursor' object has no attribute 'executemant'. Did you mean: 'executemany'?
+2026-04-04 22:00:38,839 -INFO -Fetching html
+2026-04-04 22:00:38,841 -INFO -Fetching Webpage
+2026-04-04 22:00:40,711 -INFO -Extracted 0 articles
+2026-04-04 22:00:40,711 -INFO -Fetched 0 articles
+2026-04-04 22:00:40,872 -ERROR -Database error occured
+Traceback (most recent call last):
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 108, in main
+    insert_articles(cursor,articles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 81, in insert_articles
+    cursor.executemant(
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.cursor' object has no attribute 'executemant'. Did you mean: 'executemany'?
+2026-04-04 22:12:02,337 -INFO -Fetching html
+2026-04-04 22:12:02,338 -INFO -Fetching Webpage
+2026-04-04 22:12:04,193 -INFO -Extracted 0 articles
+2026-04-04 22:12:04,194 -INFO -Fetched 0 articles
+2026-04-04 22:12:04,498 -INFO -Clearing old data
+2026-04-04 22:12:04,521 -INFO -Inserting new data
+2026-04-04 22:12:04,524 -INFO -Data inserted successfully
+2026-04-04 22:49:12,676 -INFO -Fetching html
+2026-04-04 22:49:12,679 -INFO -Fetching Webpage
+2026-04-04 22:49:14,143 -INFO -Extracted 44 articles
+2026-04-04 22:49:14,144 -INFO -Fetched 44 articles
+2026-04-04 22:49:14,530 -INFO -Clearing old data
+2026-04-04 22:49:14,643 -INFO -Inserting new data
+2026-04-04 22:49:14,661 -ERROR -Database error occured
+Traceback (most recent call last):
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 116, in main
+    insert_articles(cursor , articles)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\new.py", line 85, in insert_articles
+    cursor.executemany(
+    ~~~~~~~~~~~~~~~~~~^
+        "INSERT INTO techcrunch (title , url) VALUES (%s,%s) ON CONFLICT DO NOTHING",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        articles
+        ^^^^^^^^
+    )
+    ^
+TypeError: dict is not a sequence
+2026-04-04 22:53:25,306 -INFO -Fetching html
+2026-04-04 22:53:25,307 -INFO -Fetching Webpage
+2026-04-04 22:53:26,525 -INFO -Extracted 44 articles
+2026-04-04 22:53:26,526 -INFO -Fetched 44 articles
+2026-04-04 22:53:26,671 -INFO -Clearing old data
+2026-04-04 22:53:26,954 -INFO -Inserting new data
+2026-04-04 22:53:27,034 -INFO -Data inserted successfully
+2026-04-04 22:58:56,674 - INFO - Fetching data...
+2026-04-04 22:59:30,004 - INFO - Fetched 100 stories 
+
+2026-04-04 22:59:30,467 - INFO - 
+ Data inserted to the database successfully
+2026-04-04 23:01:55,377 -INFO -Fetching html
+2026-04-04 23:01:55,379 -INFO -Fetching Webpage
+2026-04-04 23:01:56,655 -INFO -Extracted 44 articles
+2026-04-04 23:01:56,656 -INFO -Fetched 44 articles
+2026-04-04 23:01:56,936 -INFO -Clearing old data
+2026-04-04 23:01:56,963 -INFO -Inserting new data
+2026-04-04 23:01:57,002 -INFO -Data inserted successfully
+2026-04-05 04:27:35,344 -INFO -Pipeline satarted...
+2026-04-05 04:27:35,378 -INFO -Fetching html
+2026-04-05 04:27:35,382 -INFO -Fetching Webpage
+2026-04-05 04:27:38,045 -INFO -Extracted 44 articles
+2026-04-05 04:27:38,046 -INFO -Fetched 44articles
+2026-04-05 04:27:38,047 -INFO -Converting into data frame
+2026-04-05 04:27:38,071 -INFO -Saving 44 articles to CSV
+2026-04-05 20:16:21,378 - INFO - Pipeline started
+2026-04-05 20:16:21,382 - INFO - Fetching data...
+2026-04-05 20:17:10,659 - INFO - Fetched 99 stories 
+
+2026-04-05 20:17:39,067 - INFO - Pipeline started
+2026-04-05 20:17:39,069 - INFO - Fetching data...
+2026-04-05 20:18:28,033 - INFO - Fetched 99 stories 
+
+2026-04-05 20:18:38,205 - INFO - Pipeline started
+2026-04-05 20:18:38,207 - INFO - Fetching data...
+2026-04-05 20:19:27,535 - INFO - Fetched 100 stories 
+
+2026-04-05 20:19:27,536 - INFO - Converting to dataframe
+2026-04-05 20:19:27,551 - INFO - Saving {len(df)} articles to csv
+2026-04-05 20:19:37,150 - INFO - Pipeline started
+2026-04-05 20:19:37,152 - INFO - Fetching data...
+2026-04-05 20:20:33,072 - INFO - Fetched 94 stories 
+
+2026-04-05 20:20:33,074 - INFO - Converting to dataframe
+2026-04-05 20:20:33,076 - INFO - Saving {len(df)} articles to csv
+2026-04-05 20:25:09,108 - INFO - Pipeline started
+2026-04-05 20:25:09,110 - INFO - Fetching data...
+2026-04-05 20:29:28,121 - INFO - Fetched 98 stories 
+
+2026-04-05 20:29:28,122 - INFO - Converting to dataframe
+2026-04-05 20:29:28,131 - INFO - Saving {len(df)} articles to csv
+2026-04-05 20:35:11,650 - INFO - Pipeline started
+2026-04-05 20:35:11,652 - INFO - Fetching data...
+2026-04-05 20:36:12,717 - INFO - Fetched 100 stories 
+
+2026-04-05 20:36:12,718 - INFO - Converting to dataframe
+2026-04-05 20:36:12,721 - INFO - Saving {len(df)} articles to csv
+2026-04-05 20:37:15,457 - INFO - Pipeline started
+2026-04-05 20:37:15,465 - INFO - Fetching data...
+2026-04-05 20:37:27,311 - INFO - Fetched 99 stories 
+
+2026-04-05 20:37:27,313 - INFO - Converting to dataframe
+2026-04-05 20:37:27,315 - INFO - Saving {len(df)} articles to csv
+2026-04-05 21:03:37,764 - INFO - Pipeline started
+2026-04-05 21:03:37,767 - INFO - Fetching data...
+2026-04-05 21:03:52,560 - INFO - Fetched 98 stories 
+
+2026-04-05 21:03:52,561 - INFO - Converting to dataframe
+2026-04-05 21:03:52,572 - INFO - Saving {len(df)} articles to csv
+2026-04-05 21:05:29,979 -INFO -Pipeline satarted...
+2026-04-05 21:05:29,980 -INFO -Fetching html
+2026-04-05 21:05:29,982 -INFO -Fetching Webpage
+2026-04-05 21:05:36,086 -ERROR -Failed to fetch web page: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out. (read timeout=5)
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TimeoutError: _ssl.c:1015: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+        self, url, f"Read timed out. (read timeout={timeout_value})"
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out. (read timeout=5)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\techcrunch.py", line 53, in fetch_html
+    response = requests.get(url,timeout=5)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out. (read timeout=5)
+2026-04-05 21:05:51,961 -INFO -Pipeline satarted...
+2026-04-05 21:05:51,963 -INFO -Fetching html
+2026-04-05 21:05:51,965 -INFO -Fetching Webpage
+2026-04-05 21:05:55,916 -INFO -Extracted 44 articles
+2026-04-05 21:05:55,917 -INFO -Fetched 44articles
+2026-04-05 21:05:55,918 -INFO -Converting into data frame
+2026-04-05 21:05:55,934 -INFO -Saving 44 articles to CSV
+2026-04-05 21:08:24,579 -INFO -Pipeline satarted...
+2026-04-05 21:08:24,582 -INFO -Fetching html
+2026-04-05 21:08:24,583 -INFO -Fetching Webpage
+2026-04-05 21:08:27,054 -INFO -Extracted 44 articles
+2026-04-05 21:08:27,055 -INFO -Fetched 44articles
+2026-04-05 21:08:27,056 -INFO -Converting into data frame
+2026-04-05 21:08:27,080 -INFO -Saving 44 articles to CSV
+2026-04-05 21:08:36,929 - INFO - Pipeline started
+2026-04-05 21:08:36,930 - INFO - Fetching data...
+2026-04-05 21:08:49,653 - INFO - Fetched 100 stories 
+
+2026-04-05 21:08:49,654 - INFO - Converting to dataframe
+2026-04-05 21:08:49,657 - INFO - Saving {len(df)} articles to csv
+2026-04-05 21:31:25,094 -INFO -Pipeline satarted...
+2026-04-05 21:31:25,097 -INFO -Fetching html
+2026-04-05 21:31:25,098 -INFO -Fetching Webpage
+2026-04-05 21:31:26,417 -INFO -Extracted 44 articles
+2026-04-05 21:31:26,419 -INFO -Fetched 44articles
+2026-04-05 21:31:26,420 -INFO -Converting into data frame
+2026-04-05 21:31:26,433 -INFO -Saving 44 articles to CSV
+2026-04-05 21:33:58,266 - INFO - Pipeline started
+2026-04-05 21:33:58,268 - INFO - Fetching data...
+2026-04-05 21:34:11,256 - INFO - Fetched 200 stories 
+
+2026-04-05 21:34:11,257 - INFO - Converting to dataframe
+2026-04-05 21:34:11,258 - INFO - Saving {len(df)} articles to csv
+2026-04-05 21:36:00,766 - INFO - Pipeline started
+2026-04-05 21:36:00,767 - INFO - Fetching data...
+2026-04-05 21:36:10,616 - INFO - Fetched 200 stories 
+
+2026-04-05 21:36:10,617 - INFO - Converting to dataframe
+2026-04-05 21:36:10,618 - INFO - Saving {len(df)} articles to csv
+2026-04-05 21:36:13,810 -INFO -Pipeline satarted...
+2026-04-05 21:36:13,810 -INFO -Fetching html
+2026-04-05 21:36:13,811 -INFO -Fetching Webpage
+2026-04-05 21:36:15,057 -INFO -Extracted 44 articles
+2026-04-05 21:36:15,058 -INFO -Fetched 44articles
+2026-04-05 21:36:15,059 -INFO -Converting into data frame
+2026-04-05 21:36:15,062 -INFO -Saving 44 articles to CSV
+2026-04-05 21:52:04,697 -INFO -Pipeline satarted...
+2026-04-05 21:52:04,698 -INFO -Fetching html
+2026-04-05 21:52:04,699 -INFO -Fetching Webpage
+2026-04-05 21:52:05,586 -INFO -Extracted 44 articles
+2026-04-05 21:52:05,587 -INFO -Fetched 44articles
+2026-04-05 21:52:05,587 -INFO -Converting into data frame
+2026-04-05 21:52:05,593 -INFO -Saving 44 articles to CSV
+2026-04-05 21:52:07,628 - INFO - Pipeline started
+2026-04-05 21:52:07,629 - INFO - Fetching data...
+2026-04-05 21:52:18,006 - INFO - Fetched 200 stories 
+
+2026-04-05 21:52:18,007 - INFO - Converting to dataframe
+2026-04-05 21:52:18,008 - INFO - Saving {len(df)} articles to csv
+2026-04-05 21:57:43,375 -INFO -Pipeline satarted...
+2026-04-05 21:57:43,376 -INFO -Fetching html
+2026-04-05 21:57:43,377 -INFO -Fetching Webpage
+2026-04-05 21:57:44,453 -INFO -Extracted 44 articles
+2026-04-05 21:57:44,453 -INFO -Fetched 44articles
+2026-04-05 21:57:44,454 -INFO -Converting into data frame
+2026-04-05 21:57:44,464 -INFO -Saving 44 articles to CSV
+2026-04-05 21:57:46,117 - INFO - Pipeline started
+2026-04-05 21:57:46,118 - INFO - Fetching data...
+2026-04-05 21:57:56,981 - INFO - Fetched 200 stories 
+
+2026-04-05 21:57:56,982 - INFO - Converting to dataframe
+2026-04-05 21:57:56,984 - INFO - Saving {len(df)} articles to csv
+2026-04-05 22:05:01,774 -INFO -Pipeline satarted...
+2026-04-05 22:05:01,775 -INFO -Fetching html
+2026-04-05 22:05:01,776 -INFO -Fetching Webpage
+2026-04-05 22:05:02,566 -INFO -Extracted 44 articles
+2026-04-05 22:05:02,567 -INFO -Fetched 44articles
+2026-04-05 22:05:02,568 -INFO -Converting into data frame
+2026-04-05 22:05:02,570 -INFO -Saving 44 articles to CSV
+2026-04-05 22:05:04,226 - INFO - Pipeline started
+2026-04-05 22:05:04,227 - INFO - Fetching data...
+2026-04-05 22:05:13,649 - INFO - Fetched 200 stories 
+
+2026-04-05 22:05:13,649 - INFO - Converting to dataframe
+2026-04-05 22:05:13,652 - INFO - Saving 200 stories to csv
+2026-04-06 10:32:22,213 -INFO -Pipeline satarted...
+2026-04-06 10:32:22,223 -INFO -Fetching html
+2026-04-06 10:32:22,226 -INFO -Fetching Webpage
+2026-04-06 10:32:24,945 -INFO -Extracted 44 articles
+2026-04-06 10:32:24,947 -INFO -Fetched 44articles
+2026-04-06 10:32:24,948 -INFO -Converting into data frame
+2026-04-06 10:32:25,041 -INFO -Saving 44 articles to CSV
+2026-04-06 10:32:33,759 - INFO - Pipeline started
+2026-04-06 10:32:33,762 - INFO - Fetching data...
+2026-04-06 10:32:46,106 - INFO - Fetched 200 stories 
+
+2026-04-06 10:32:46,108 - INFO - Converting to dataframe
+2026-04-06 10:32:46,134 - INFO - Saving 200 stories to csv
+2026-04-06 10:36:07,767 -INFO -Pipeline satarted...
+2026-04-06 10:36:07,771 -INFO -Fetching html
+2026-04-06 10:36:07,774 -INFO -Fetching Webpage
+2026-04-06 10:36:09,678 -INFO -Extracted 44 articles
+2026-04-06 10:36:09,680 -INFO -Fetched 44articles
+2026-04-06 10:36:09,682 -INFO -Converting into data frame
+2026-04-06 10:36:09,726 -INFO -Saving 44 articles to CSV
+2026-04-06 10:36:14,498 - INFO - Pipeline started
+2026-04-06 10:36:14,500 - INFO - Fetching data...
+2026-04-06 10:36:26,788 - INFO - Fetched 200 stories 
+
+2026-04-06 10:36:26,789 - INFO - Converting to dataframe
+2026-04-06 10:36:26,795 - INFO - Saving 200 stories to csv
+2026-04-08 12:15:45,858 -INFO -Pipeline satarted...
+2026-04-08 12:15:45,864 -INFO -Fetching html
+2026-04-08 12:15:45,866 -INFO -Fetching Webpage
+2026-04-08 12:15:51,737 -ERROR -Failed to fetch web page: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out. (read timeout=5)
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TimeoutError: _ssl.c:1015: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+        self, url, f"Read timed out. (read timeout={timeout_value})"
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out. (read timeout=5)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\OneDrive\Desktop\SAMPLE\News-Scraper\scraper\techcrunch.py", line 53, in fetch_html
+    response = requests.get(url,timeout=5)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out. (read timeout=5)
+2026-04-08 12:15:55,425 - INFO - Pipeline started
+2026-04-08 12:15:55,427 - INFO - Fetching data...
+2026-04-08 12:16:09,017 - INFO - Fetched 199 stories 
+
+2026-04-08 12:16:09,019 - INFO - Converting to dataframe
+2026-04-08 12:16:09,044 - INFO - Saving 199 stories to csv
+2026-04-08 12:16:21,576 -INFO -Pipeline satarted...
+2026-04-08 12:16:21,578 -INFO -Fetching html
+2026-04-08 12:16:21,579 -INFO -Fetching Webpage
+2026-04-08 12:16:24,806 -INFO -Extracted 42 articles
+2026-04-08 12:16:24,808 -INFO -Fetched 42articles
+2026-04-08 12:16:24,809 -INFO -Converting into data frame
+2026-04-08 12:16:24,813 -INFO -Saving 42 articles to CSV
+2026-04-08 12:16:27,764 - INFO - Pipeline started
+2026-04-08 12:16:27,765 - INFO - Fetching data...
+2026-04-08 12:16:42,560 - INFO - Fetched 200 stories 
+
+2026-04-08 12:16:42,561 - INFO - Converting to dataframe
+2026-04-08 12:16:42,565 - INFO - Saving 200 stories to csv

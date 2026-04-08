@@ -1,46 +1,87 @@
-
-import requests
 from concurrent.futures import ThreadPoolExecutor
-import pandas as pd 
+from dotenv import load_dotenv
+import os 
+import requests
+import logging
+import pandas as pd
 
 
-topstories_url = "https://hacker-news.firebaseio.com/v0/topstories.json"
-top_ids = requests.get(topstories_url).json()
 
+# Loading env variables
 
-stories_id = top_ids[:100]
+load_dotenv()
 
+REQUIRED_VARS = ["DB_HOST","DB_NAME","DB_USER","DB_PASSWORD","DB_PORT"]
+TARGER_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
+OUTPUT_FILE = os.path.join("data", "hackernews.csv")
+session = requests.Session()
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filename="app.log",
+    filemode="a"
+)
 
-stories =[]
+def validate_environment():
+    for var in REQUIRED_VARS:
+        if not os.getenv(var):
+            raise ValueError(f"Missing environment variable: {var}")
 
-def fetch_stories(s_id):
+def get_top_stories_ids(url):
+    response = requests.get(url,timeout=5)
+    return response.json()[:200]
+
+def fetch_story(story_id):
     try:
-        item_url = f"https://hacker-news.firebaseio.com/v0/item/{s_id}.json"
-        data = requests.get(item_url , timeout=5).json()    
+        url=f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
+        response = session.get(url,timeout=5)
 
-        if data and data.get("title"):
-            title = data.get("title")
-            return{
-                    "title" : title ,
-                    "url" : data.get("url")
-                }
-    except requests.exceptions.RequestException :
+        if response.status_code == 200:
+            data = response.json()
+
+            if data and data.get("title"):
+                return (
+                    data.get("title").strip(),
+                    data.get("url")
+                )
+    except requests.exceptions.RequestException:
         return None
+    
+def fetch_all_stories(story_ids):
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        results = list(executor.map(fetch_story, story_ids))
 
-with ThreadPoolExecutor(max_workers=10)as executor:
-    results = list(executor.map(fetch_stories , stories_id))
+    return [story for story in results if story]
 
-stories = [story for story in results if story]
+def save_to_csv(stories):
+    try:
+        logging.info("Converting to dataframe")
 
-print(f"Found {len(stories)} stories:")
+        df = pd.DataFrame(stories , columns=["title" , "url"])
+        df["scraped_at"] = pd.Timestamp.now()
+        logging.info(f"Saving {len(df)} stories to csv")
+        df.to_csv(OUTPUT_FILE ,index=False)
+        print("Saved to csv")
 
-for s in stories:
-    print(s["title"])
-    print(s["url"])
-    print("-"*50)
+    except Exception:
+        logging.exception("Falied to save csv")
 
-df = pd.DataFrame(stories)
 
-df.to_csv("data/hackernews_stories.csv", index=False, encoding='utf-8')
+#main function
 
-print("Saved to CSV")
+def main():
+    logging.info("Pipeline started")
+    print("Fetching data")
+    logging.info("Fetching data...")
+
+    story_ids = get_top_stories_ids(TARGER_URL)
+    stories = fetch_all_stories(story_ids)
+
+    print("Fetched stories")
+    logging.info(f"Fetched {len(stories)} stories \n")
+
+    save_to_csv(stories)
+
+
+if __name__ == "__main__":
+    main()

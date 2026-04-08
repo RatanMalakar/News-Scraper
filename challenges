@@ -1,0 +1,9 @@
+## Challenges & Solutions
+- Problem: Ads in scraped content  
+  Solution: Filter only <p> tags (BeautifulSoup)
+
+- Problem: Duplicate articles  
+  Solution: Hash URLs
+
+- Problem: API latency  
+  Solution: Pre-store data

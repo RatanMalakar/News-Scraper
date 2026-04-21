@@ -28,23 +28,6 @@ def validate_env():
         if not os.getenv(var):
             raise ValueError(f"Missing env var:{var}")
     logging.info("Environment variables validate")
-# def get_connection():
-#     return psycopg2.connect(
-#         host=os.getenv("DB_HOST"),
-#         database=os.getenv("DB_NAME"),
-#         user=os.getenv("DB_USER"),
-#         password=os.getenv("DB_PASSWORD"),
-#         port=os.getenv("DB_PORT")
-#     )
-
-# def create_table(cursor):
-#     cursor.execute("""
-#         CREATE TABLE IF NOT EXISTS techcrunch(
-#             id SERIAL PRIMARY KEY,
-#             title TEXT UNIQUE,
-#             url TEXT
-#         )
-#     """)
 
 def fetch_html(url):
     try:
@@ -95,17 +78,6 @@ def save_to_csv(articles):
         logging.exception("Failed to save csv")
 
 
-    
-# def insert_articles(cursor , articles):
-#     logging.info("Clearing old data")
-#     cursor.execute("TRUNCATE TABLE techcrunch RESTART IDENTITY")
-
-#     logging.info("Inserting new data")
-#     cursor.executemany(
-#         "INSERT INTO techcrunch (title , url) VALUES (%s,%s) ON CONFLICT DO NOTHING",
-#         articles
-#     )
-
 def main():
     logging.info("Pipeline satarted...")
 
@@ -127,31 +99,6 @@ def main():
     logging.info(f"Fetched {len(articles)}articles")
 
     save_to_csv(articles)
-
-    # print("Fteched articles")
-    # logging.info(f"Fetched {len(articles)} articles")
-
-    # print("Connecting Database")
-    # conn = get_connection()
-    # cursor = conn.cursor()
-
-    # try:
-    #     print("Creating table")
-    #     create_table(cursor)
-    #     print("Inserting data")
-    #     insert_articles(cursor , articles)
-    #     conn.commit()
-    #     print("Data inserted successfully")
-    #     logging.info("Data inserted successfully")
-
-    # except Exception :
-    #     conn.rollback()
-    #     print("Database error occured")
-    #     logging.exception("Database error occured")
-
-    # finally:
-    #     cursor.close()
-    #     conn.close()
 
 if __name__ =="__main__":
     main()

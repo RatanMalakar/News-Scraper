@@ -2,6 +2,8 @@
 import pandas as pd
 import logging
 import os 
+from datetime import datetime
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -27,6 +29,7 @@ df3.dropna(inplace=True)
 df3 = df3[df3["title"].str.len() > 10]
 
 df3.to_csv("data/cleaned_news.csv", index=False)
+
 
 df4 = pd.read_csv("data/cleaned_news.csv")
 
@@ -55,10 +58,29 @@ def categorize(title):
         return "AI Research"
     else:
         return "Other"
+    
+def save_news(new_data):
+    new_df = pd.DataFrame(new_data)
+    new_df["extracted_at"]=datetime.now()
+
+    try:
+        old_df=pd.read_csv("ai_news.csv")
+
+        df=pd.concat([old_df , new_df], ignore_index=True)
+
+    except FileNotFoundError:
+        df=new_df
+
+    df = df.drop_duplicates(subset=["title","link"])
+    df["extracted_at"] = pd.to_datetime(df["extracted_at"])
+    df = df.sort_values (by="extracted_at" , ascending=False)
+    df=df.head(500)
+    df.to_csv("latest_news.csv",index=False)
 
 df["category"]=df["title"].apply(categorize)
 df = df[df["category"]!= "Other"]
 
-df.to_csv("data/ai_news.csv", index=False)
+df.to_csv("data/ai_news.csv", mode='a', header=not os.path.exists("data/ai_news.csv"), index=False)
 
 logging.info("'Ai Related News Is Collected")
+

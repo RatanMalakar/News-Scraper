@@ -474,3 +474,230 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='techcrunch.com', port
 
 2026-04-08 12:16:42,561 - INFO - Converting to dataframe
 2026-04-08 12:16:42,565 - INFO - Saving 200 stories to csv
+2026-04-21 16:05:25,163 -INFO -Pipeline satarted...
+2026-04-21 16:05:25,171 -INFO -Fetching html
+2026-04-21 16:05:25,174 -INFO -Fetching Webpage
+2026-04-21 16:05:27,610 -INFO -Extracted 42 articles
+2026-04-21 16:05:27,611 -INFO -Fetched 42articles
+2026-04-21 16:05:27,611 -INFO -Converting into data frame
+2026-04-21 16:05:27,632 -INFO -Saving 42 articles to CSV
+2026-04-21 16:05:31,477 - INFO - Pipeline started
+2026-04-21 16:05:31,479 - INFO - Fetching data...
+2026-04-21 16:05:52,998 - INFO - Fetched 200 stories 
+
+2026-04-21 16:05:52,999 - INFO - Converting to dataframe
+2026-04-21 16:05:53,004 - INFO - Saving 200 stories to csv
+2026-04-21 18:08:36,413 -INFO -Pipeline satarted...
+2026-04-21 18:08:36,417 -INFO -Fetching html
+2026-04-21 18:08:36,418 -INFO -Fetching Webpage
+2026-04-21 18:08:38,399 -INFO -Extracted 42 articles
+2026-04-21 18:08:38,400 -INFO -Fetched 42articles
+2026-04-21 18:08:38,400 -INFO -Converting into data frame
+2026-04-21 18:08:38,412 -INFO -Saving 42 articles to CSV
+2026-04-21 18:08:40,199 - INFO - Pipeline started
+2026-04-21 18:08:40,200 - INFO - Fetching data...
+2026-04-21 18:08:49,805 - INFO - Fetched 200 stories 
+
+2026-04-21 18:08:49,806 - INFO - Converting to dataframe
+2026-04-21 18:08:49,809 - INFO - Saving 200 stories to csv
+2026-04-21 22:53:18,256 -INFO -Pipeline satarted...
+2026-04-21 22:53:18,260 -INFO -Fetching html
+2026-04-21 22:53:18,261 -INFO -Fetching Webpage
+2026-04-21 22:53:19,380 -INFO -Extracted 42 articles
+2026-04-21 22:53:19,382 -INFO -Fetched 42articles
+2026-04-21 22:53:19,383 -INFO -Converting into data frame
+2026-04-21 22:53:19,404 -INFO -Saving 42 articles to CSV
+2026-04-21 22:53:23,044 - INFO - Pipeline started
+2026-04-21 22:53:23,046 - INFO - Fetching data...
+2026-04-21 22:53:35,082 - INFO - Fetched 200 stories 
+
+2026-04-21 22:53:35,084 - INFO - Converting to dataframe
+2026-04-21 22:53:35,093 - INFO - Saving 200 stories to csv
+2026-04-21 23:17:03,539 -INFO -Pipeline satarted...
+2026-04-21 23:17:03,558 -INFO -Fetching html
+2026-04-21 23:17:03,560 -INFO -Fetching Webpage
+2026-04-21 23:17:23,298 -ERROR -Failed to fetch web page: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 903, in _error_catcher
+    yield
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1421, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1363, in _handle_chunk
+    returned_chunk = self._fp._safe_read(self.chunk_left)  # type: ignore[union-attr]
+  File "C:\Program Files\Python313\Lib\http\client.py", line 642, in _safe_read
+    data = self.fp.read(amt)
+  File "C:\Program Files\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1250, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1397, in read_chunked
+    with self._error_catcher():
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 908, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\OneDrive\Desktop\NewsInsight\News-Scraper\scraper\techcrunch.py", line 53, in fetch_html
+    response = requests.get(url,timeout=5)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 746, in send
+    r.content
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 902, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out.
+2026-04-21 23:17:30,242 - INFO - Pipeline started
+2026-04-21 23:17:30,245 - INFO - Fetching data...
+2026-04-21 23:21:14,450 -INFO -Pipeline satarted...
+2026-04-21 23:21:14,453 -INFO -Fetching html
+2026-04-21 23:21:14,454 -INFO -Fetching Webpage
+2026-04-21 23:21:27,651 -ERROR -Failed to fetch web page: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 903, in _error_catcher
+    yield
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1421, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1354, in _handle_chunk
+    value = self._fp._safe_read(amt)  # type: ignore[union-attr]
+  File "C:\Program Files\Python313\Lib\http\client.py", line 642, in _safe_read
+    data = self.fp.read(amt)
+  File "C:\Program Files\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1250, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 1397, in read_chunked
+    with self._error_catcher():
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\urllib3\response.py", line 908, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\OneDrive\Desktop\NewsInsight\News-Scraper\scraper\techcrunch.py", line 53, in fetch_html
+    response = requests.get(url,timeout=5)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\sessions.py", line 746, in send
+    r.content
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 902, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='techcrunch.com', port=443): Read timed out.
+2026-04-21 23:21:31,699 - INFO - Pipeline started
+2026-04-21 23:21:31,700 - INFO - Fetching data...
+2026-04-21 23:22:36,746 - INFO - Fetched 121 stories 
+
+2026-04-21 23:22:36,747 - INFO - Converting to dataframe
+2026-04-21 23:22:36,765 - INFO - Saving 121 stories to csv
+2026-04-22 00:30:34,259 -INFO -Pipeline satarted...
+2026-04-22 00:30:34,265 -INFO -Fetching html
+2026-04-22 00:30:34,266 -INFO -Fetching Webpage
+2026-04-22 00:30:36,243 -INFO -Extracted 42 articles
+2026-04-22 00:30:36,244 -INFO -Fetched 42articles
+2026-04-22 00:30:36,245 -INFO -Converting into data frame
+2026-04-22 00:30:36,271 -INFO -Saving 42 articles to CSV
+2026-04-22 00:30:40,438 - INFO - Pipeline started
+2026-04-22 00:30:40,440 - INFO - Fetching data...
+2026-04-22 00:30:54,342 - INFO - Fetched 200 stories 
+
+2026-04-22 00:30:54,343 - INFO - Converting to dataframe
+2026-04-22 00:30:54,349 - INFO - Saving 200 stories to csv
+2026-04-22 00:54:57,260 -INFO -Pipeline satarted...
+2026-04-22 00:54:57,264 -INFO -Fetching html
+2026-04-22 00:54:57,265 -INFO -Fetching Webpage
+2026-04-22 00:54:58,624 -ERROR -Failed to fetch web page: 403 Client Error: Forbidden for url: https://techcrunch.com/category/artificial-intelligence/
+Traceback (most recent call last):
+  File "C:\Users\hp\OneDrive\Desktop\NewsInsight\News-Scraper\scraper\techcrunch.py", line 54, in fetch_html
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Roaming\Python\Python313\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://techcrunch.com/category/artificial-intelligence/
+2026-04-22 00:55:02,600 - INFO - Pipeline started
+2026-04-22 00:55:02,602 - INFO - Fetching data...
+2026-04-22 00:55:14,838 - INFO - Fetched 200 stories 
+
+2026-04-22 00:55:14,839 - INFO - Converting to dataframe
+2026-04-22 00:55:14,865 - INFO - Saving 200 stories to csv
+2026-04-22 01:42:59,303 -INFO -Pipeline satarted...
+2026-04-22 01:42:59,306 -INFO -Fetching html
+2026-04-22 01:42:59,307 -INFO -Fetching Webpage
+2026-04-22 01:43:00,168 -INFO -Extracted 42 articles
+2026-04-22 01:43:00,169 -INFO -Fetched 42articles
+2026-04-22 01:43:00,169 -INFO -Converting into data frame
+2026-04-22 01:43:00,184 -INFO -Saving 42 articles to CSV
+2026-04-22 01:43:02,405 - INFO - Pipeline started
+2026-04-22 01:43:02,406 - INFO - Fetching data...
+2026-04-22 01:43:11,856 - INFO - Fetched 200 stories 
+
+2026-04-22 01:43:11,857 - INFO - Converting to dataframe
+2026-04-22 01:43:11,874 - INFO - Saving 200 stories to csv
+2026-04-22 01:55:10,632 -INFO -Pipeline satarted...
+2026-04-22 01:55:10,635 -INFO -Fetching html
+2026-04-22 01:55:10,635 -INFO -Fetching Webpage
+2026-04-22 01:55:12,805 -INFO -Extracted 42 articles
+2026-04-22 01:55:12,806 -INFO -Fetched 42articles
+2026-04-22 01:55:12,806 -INFO -Converting into data frame
+2026-04-22 01:55:12,823 -INFO -Saving 42 articles to CSV
+2026-04-22 01:55:15,290 - INFO - Pipeline started
+2026-04-22 01:55:15,291 - INFO - Fetching data...
+2026-04-22 01:55:25,189 - INFO - Fetched 200 stories 
+
+2026-04-22 01:55:25,189 - INFO - Converting to dataframe
+2026-04-22 01:55:25,192 - INFO - Saving 200 stories to csv

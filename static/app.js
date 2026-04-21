@@ -7,6 +7,9 @@ const API_URL = "/articles";
 let allArticles = [];
 let currentCategory = "All";
 
+let currentPage = 1;
+const limit = 10;
+
 // ── Category CSS class map ──────────────────────────
 const catClass = {
   "AI Companies":   "cat-ai-companies",
@@ -81,14 +84,18 @@ function renderCard(article, idx) {
   card.querySelector(".card-time").textContent = timeAgo(article.scraped_at);
   card.querySelector(".card-title").textContent = article.title || "Untitled";
 
+  // Fix: explicitly set href so Read Article opens the correct URL in a new tab
   const link = card.querySelector(".card-link");
-  if (article.url) {
-    link.href = article.url;
+  const articleUrl = (article.url || "").trim();
+  if (articleUrl) {
+    link.href = articleUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
   } else {
     link.style.display = "none";
   }
 
-  card.querySelector(".card-source").textContent = getSource(article.url || "");
+  card.querySelector(".card-source").textContent = getSource(articleUrl);
 
   return clone;
 }
@@ -167,8 +174,17 @@ async function loadNews() {
     allArticles = data.filter(a => a.title && a.title.trim().length > 0);
     updateStats(allArticles);
 
-    const now = new Date();
-    lastUpd.textContent = "Updated " + now.toLocaleTimeString();
+    // Show scraped_at timestamp of the most recent article (backend already sorts newest-first)
+    if (allArticles.length > 0 && allArticles[0].scraped_at) {
+      const latestDate = new Date(allArticles[0].scraped_at);
+      if (!isNaN(latestDate)) {
+        lastUpd.textContent = "Scraped " + latestDate.toLocaleString();
+      } else {
+        lastUpd.textContent = "Updated " + new Date().toLocaleTimeString();
+      }
+    } else {
+      lastUpd.textContent = "Updated " + new Date().toLocaleTimeString();
+    }
 
     loader.style.display = "none";
     filterArticles();
@@ -178,6 +194,42 @@ async function loadNews() {
     errMsg.textContent   = "Error: " + err.message + ". Make sure the server is running.";
     console.error("Failed to fetch news:", err);
   } finally {
+    if (refreshIcon) {
+      refreshIcon.style.animation = "";
+    }
+  }
+}
+
+// ── Trigger scraper then reload articles ─────────────
+async function triggerRefresh() {
+  const btn         = document.getElementById("refreshBtn");
+  const refreshIcon = document.querySelector(".refresh-icon");
+  const lastUpd     = document.getElementById("lastUpdated");
+
+  // Disable button while scraping to prevent double-clicks
+  btn.disabled = true;
+  lastUpd.textContent = "Scraping...";
+
+  if (refreshIcon) {
+    refreshIcon.style.animation = "spin 0.7s linear infinite";
+  }
+
+  try {
+    const res = await fetch("/refresh", { method: "POST" });
+    const result = await res.json();
+
+    if (!res.ok || result.status === "error") {
+      console.error("Scraper error:", result.message);
+      lastUpd.textContent = "Scrape failed — see console";
+    } else {
+      // Scraper finished — now reload articles from the updated CSV
+      await loadNews();
+    }
+  } catch (err) {
+    console.error("Refresh failed:", err);
+    lastUpd.textContent = "Refresh error — see console";
+  } finally {
+    btn.disabled = false;
     if (refreshIcon) {
       refreshIcon.style.animation = "";
     }
